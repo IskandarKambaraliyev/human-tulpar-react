@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marko+One&family=Roboto+Condensed:wght@300;400;700&family=Rubik:wght@400;500;600;700;800&display=swap");
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+// --- variables --- //
+// font family
+// primary-font is "Inter";
+$primary-font: "Inter";
+$secondary-font: "Roboto Condensed", sans-serif;
+
+// font weight
+$regular-fw: 400;
+$medium-fw: 500;
+$semi-bold-fw: 600;
+$bold-fw: 700;
+
+// font size
+$normal-fz: 14px;
+$title-fz: 44px;
+$title-768-fz: 2.5rem;
+$title-420-fz: 2rem;
+$logo-nav-fz: 30px;
+
+// colors
+$primary-color: #32495e;
+$secondary-color: #e95258;
+$light-color: #f9f9f9;
+$primary-500-color: #8093ac;
+$white-color: #ffffff;
+$black-color: #000000;
+
+$footer-color: #333333;
+$primary-line-color: #49647d;
+
+// social icons bg colors
+$socical-icon-1: #e95258;
+$socical-icon-2: #14ac51;
+$socical-icon-3: #4598ff;
+$socical-icon-4: #32495e;
+$socical-icon-5: #c33a7c;
+
+$socical-icon-bg-1: rgba(#e95258, 50%);
+$socical-icon-bg-2: rgba(#14ac51, 50%);
+$socical-icon-bg-3: rgba(#4598ff, 50%);
+$socical-icon-bg-4: rgba(#32495e, 50%);
+$socical-icon-bg-5: rgba(#c33a7c, 50%);
+
+// sizes
+$container-size: 1170px;
+
+// border radius
+$radius: 100px;
+$radius-full: 50%;
+
+// box shadow
+$box-shadow: 0px 4px 40px rgba(34, 74, 164, 0.15);
+
+// --- global styles --- //
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: $primary-font;
+  min-height: 200vh;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: unset;
+}
+
+button {
+  cursor: pointer;
+}
+
+a,
+button {
+  user-select: none;
+}
+
+img {
+  display: block;
+  user-select: none;
+}
+
+// --- global classes --- //
+.container {
+  max-width: $container-size;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+}
+
+.section_title {
+  font-size: $title-fz;
+  font-weight: $bold-fw;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .section_title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section_title {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .section_title {
+    font-size: 1.5rem;
+  }
+}
+
+.link_btn {
+  text-transform: uppercase;
+  border-radius: $radius;
+  transition: 0.3s ease-out;
+  overflow: hidden;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  padding: 1rem 3.5rem;
+  text-align: center;
+  display: inline-block;
+  font-size: 1rem;
+
+  &:hover {
+    background: $primary-color;
+    color: $light-color;
+  }
+
+  &.btn_light {
+    border-color: $light-color;
+    color: $light-color;
+
+    &:hover {
+      background-color: $light-color;
+      color: $primary-color;
+    }
+  }
+}
+
+@media (hover: none) {
+  .link_btn {
+    &:hover {
+      background-color: unset;
+      color: $primary-color;
+    }
+
+    &.btn_light {
+      &:hover {
+        background-color: unset;
+        color: $light-color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .link_btn {
+    padding: 1rem 2rem;
+    font-size: $normal-fz;
+  }
+}

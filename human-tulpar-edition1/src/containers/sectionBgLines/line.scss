@@ -1,0 +1,35 @@
+@import "../../global";
+
+.lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .line {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        right: 15%;
+        display: flex;
+
+        div {
+            width: 3rem;
+            height: 100%;
+            background: #F3F5FA;
+
+            &:not(:nth-child(1)) {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    &.dark {
+        .line {
+            div {
+                background: $primary-line-color;
+            }
+        }
+    }
+}

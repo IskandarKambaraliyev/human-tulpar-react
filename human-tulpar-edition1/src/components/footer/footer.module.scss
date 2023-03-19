@@ -1,0 +1,78 @@
+@import "../../global";
+
+.footer {
+    background-color: $footer-color;
+    padding: 5rem 0 4rem;
+    position: relative;
+    color: $light-color;
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .top {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+
+            .left {
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                column-gap: 5rem;
+                row-gap: 2rem;
+
+                .logo {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    text-transform: uppercase;
+                    font-size: 30px;
+                    font-weight: $bold-fw;
+                    color: $light-color;
+
+                    svg {
+                        width: 70px;
+                        height: auto;
+                    }
+                }
+
+                .footer_links {
+                    display: flex;
+                    flex-direction: column;
+
+                    &_title {
+                        font-size: 1rem;
+                        font-weight: $bold-fw;
+                        color: $light-color;
+                        margin-bottom: 1rem;
+                    }
+
+                    .link {
+                        color: $light-color;
+                        padding: 5px 0;
+                        font-size: $normal-fz;
+                        font-weight: $regular-fw;
+                    }
+                }
+
+                .navLinks .link {
+                    text-transform: capitalize;
+
+                    &.active {
+                        font-size: 3rem;
+                        text-decoration: underline !important;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            font-size: $normal-fz;
+            color: $light-color;
+        }
+    }
+}
