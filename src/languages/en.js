@@ -149,7 +149,7 @@ const en = {
       link2: "trauma rehabilitation center",
     },
     dropdown2: {
-      link1: "our spicialists",
+      link1: "our specialists",
       link2: "how to find us",
     },
   },
