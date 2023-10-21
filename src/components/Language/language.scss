@@ -1,0 +1,160 @@
+@import "../../global";
+
+.lang_wrapper {
+
+    .main_btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 60px;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-size: $normal-fz;
+            font-weight: $medium-fw;
+            color: $primary-color;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            transition: .3s;
+            margin-left: 6px;
+
+            &.active {
+                transform: rotate(180deg);
+            }
+        }
+
+        .lang_holder {
+            width: 100%;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            display: none;
+            background: $primary-color;
+            border: 1px solid $light-color;
+
+            &.lang_show {
+                display: block;
+            }
+
+            .lang_item {
+                width: 100%;
+                padding: 10px;
+                color: $light-color;
+                font-size: $normal-fz;
+                font-weight: $medium-fw;
+
+                &:hover {
+                    background: $primary-500-color;
+                }
+
+                &.choosen {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // if it has a "light" class
+    &.light {
+        .main_btn {
+
+            span {
+                color: $light-color;
+
+            }
+            .icon {
+
+                svg {
+
+                    path {
+                        fill: $light-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &.sticky {
+        .main_btn {
+
+            span {
+                color: $primary-color !important;
+
+            }
+            .icon {
+
+                svg {
+
+                    path {
+                        fill: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .lang_wrapper {
+        margin-top: calc(2rem - 10px);
+        width: 100%;
+        padding: 10px;
+
+        .main_btn {
+            gap: 10px;
+            span {
+                min-width: 60px;
+                padding: 10px;
+                background: $light-color !important;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                color: $primary-color !important;
+            }
+    
+            .icon {
+                display: none;
+    
+                &.active {
+                    transform: rotate(180deg);
+                }
+            }
+    
+            .lang_holder {
+                min-width: 60px;
+                display: block;
+                position: unset;
+                background: unset;
+                border: 1px solid $light-color !important;
+    
+                .lang_item {
+    
+                    &:hover {
+                        background: $primary-500-color !important;
+                    }
+    
+                    &.choosen {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.sticky {
+            .main_btn {
+    
+                span {
+                    color: $primary-color !important;
+                }
+            }
+        }
+    }
+}

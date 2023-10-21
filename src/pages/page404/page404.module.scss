@@ -1,0 +1,50 @@
+@import "../../global";
+
+body {
+  min-height: 100vh !important;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: $primary-color;
+  color: $light-color;
+
+  &_wrapper {
+    text-align: center;
+
+    .icon {
+      font-size: 10rem;
+      color: $light-color;
+      line-height: 100%;
+      animation: icon 1s;
+      animation-delay: 1s;
+      animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .title {
+        font-size: 2rem;
+        color: $light-color;
+        line-height: 100%;
+    }
+    
+    .link {
+        color: $light-color !important;
+        text-decoration: underline;
+        padding: 1rem;
+        display: inline-block;
+    }
+  }
+}
+
+@keyframes icon {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

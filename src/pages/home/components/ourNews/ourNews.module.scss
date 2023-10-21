@@ -1,0 +1,106 @@
+@import "../../../../global";
+
+.ourNews {
+    padding: 5rem 0 4rem;
+    background-color: $light-color;
+    color: $primary-color;
+    position: relative;
+
+    &_container {
+        position: relative;
+
+        .section_title {
+            color: $primary-color;
+        }
+
+        .news_wrapper {
+            position: relative;
+
+            .news_filter {
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                column-gap: 2rem;
+                row-gap: 0.5rem;
+                margin-top: 2rem;
+
+                .filter {
+                    padding: 5px 0;
+                    cursor: pointer;
+                    user-select: none;
+
+                    &.active {
+                        border-bottom: 1px solid $primary-color;
+                    }
+                }
+            }
+
+            .gallery_wrapper {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+                margin: 50px 0;
+
+                .new {
+                    position: relative;
+                    min-height: 250px;
+
+                    .image {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .content {
+                        width: 100%;
+                        position: relative;
+                        background: rgba(50, 73, 94, 0.5);
+                        min-height: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .back {
+                            min-height: 100px;
+                            flex: 1;
+                        }
+
+                        .info {
+                            padding: 1rem;
+                            margin-top: auto;
+                            background-color: $secondary-color;
+
+                            &_title {
+                                color: $light-color;
+                                font-size: 1rem;
+                                font-weight: $bold-fw;
+                            }
+
+                            &_text {
+                                color: $light-color;
+                                margin: 1rem 0;
+                                font-size: $normal-fz;
+                                font-weight: $regular-fw;
+                            }
+
+                            &_btn {
+                                padding: 5px 0;
+                                color: $light-color;
+                                font-size: $normal-fz;
+                                font-weight: $medium-fw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

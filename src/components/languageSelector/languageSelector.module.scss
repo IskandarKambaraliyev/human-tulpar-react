@@ -1,0 +1,95 @@
+@import "../../global";
+
+.lang_provider {
+    position: relative;
+
+    .current_lang {
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        color: $primary-color;
+        font-size: $normal-fz;
+
+        svg {
+            transition: .3s;
+        }
+
+        &.active {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .dropdown {
+        min-width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        flex-direction: column;
+        background-color: $light-color;
+        box-shadow: 0px 4px 40px rgba(34, 74, 164, 0.15);
+        visibility: hidden;
+
+        &.active {
+            display: flex !important;
+            visibility: visible !important;
+        }
+
+        .lang_option {
+            width: 100%;
+            padding: 0.5rem;
+            cursor: pointer;
+            text-align: center;
+
+            &:hover {
+                background-color: $primary-500-color;
+                color: $light-color;
+            }
+
+            &.choosen {
+                background-color: $primary-color !important;
+                color: $light-color !important;
+                order: -1 !important;
+                cursor: default !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .lang_provider {
+        margin-right: auto;
+        width: 100%;
+    
+        .current_lang {
+            color: $light-color !important;
+            padding: 0.5rem 0;
+            margin-top: calc(2rem - 0.5rem);
+        }
+    
+        .dropdown {
+    
+            &.active {
+            }
+    
+            .lang_option {
+    
+                &:hover {
+                    background-color: $primary-500-color;
+                    color: $light-color;
+                }
+    
+                &.choosen {
+                    background-color: $light-color !important;
+                    color: $primary-color !important;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

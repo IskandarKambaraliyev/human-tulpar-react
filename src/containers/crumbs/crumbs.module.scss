@@ -1,0 +1,36 @@
+@import "../../global";
+
+.breadcrumbs {
+    padding: 1rem 0;
+    background-color: $primary-color;
+
+    &_container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+
+        .crumb {
+            display: inline-block;
+            a {
+                font-size: 1rem;
+                font-weight: $semi-bold-fw;
+                color: $primary-500-color;
+                text-transform: capitalize;
+                padding: 5px 0;
+            }
+
+            &::after {
+                content: '>';
+                font-size: 1rem;
+                font-weight: $semi-bold-fw;
+                margin-left: 1rem;
+                color: $secondary-color;
+            }
+
+            &:last-child::after {
+                display: none;
+            }
+        }
+    }
+}

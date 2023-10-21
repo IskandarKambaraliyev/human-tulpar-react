@@ -1,0 +1,118 @@
+@import "../../../../global";
+
+.questions {
+  padding: 5rem 0 4rem;
+  position: relative;
+  color: $light-color;
+  background: $primary-color;
+  border-top: 1px solid #000;
+
+  .title_wrapper {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: $primary-500-color;
+    margin-bottom: 50px;
+
+    .section_title {
+      color: $light-color;
+    }
+  }
+
+  &_container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    row-gap: 1rem;
+
+    .question_wrapper {
+      min-width: 250px;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .question {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        cursor: pointer;
+        padding: 6px 0;
+
+        &_title {
+          min-height: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          font-weight: $bold-fw;
+          color: $light-color;
+          transition: 0.3s;
+        }
+
+        .icon_wrapper {
+          min-width: 2rem;
+          min-height: 2rem;
+          border-radius: $radius-full;
+          background-color: $primary-500-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          transform: rotate(-180deg);
+          transition: 0.3s;
+
+          .icon {
+            font-size: 1rem;
+            line-height: 1rem;
+          }
+        }
+
+        &.active {
+          .question_title {
+            color: $secondary-color;
+          }
+
+          .icon_wrapper {
+            transform: rotate(0);
+            background-color: $secondary-color;
+          }
+        }
+      }
+    }
+
+    .answer_wrapper {
+      padding: 6px 0;
+      min-width: 250px;
+      flex: 1;
+      font-size: $normal-fz;
+      font-weight: $regular-fw;
+      color: $light-color;
+
+      .answer_title {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        font-weight: $bold-fw;
+        color: $light-color;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .questions {
+    &_container {
+      .question_wrapper {
+        max-width: unset;
+        flex: 1;
+      }
+
+      .answer_wrapper {
+        padding: unset;
+      }
+    }
+  }
+}

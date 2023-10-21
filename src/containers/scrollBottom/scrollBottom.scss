@@ -1,0 +1,47 @@
+.scroll_bottom {
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    z-index: 10;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #F2C94C;
+    overflow: hidden;
+    color: #32495E;
+    cursor: pointer;
+
+    &:hover {
+        background: #e9d495;
+    }
+
+    .mouse_icon {
+        font-size: 1.5rem;
+    }
+
+    .down_icon {
+        font-size: 0.5rem;
+        animation: mouse-animation 2s ease infinite;
+    }
+}
+
+@keyframes mouse-animation {
+    0% {
+        transform: translateY(-2px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+}
+
+@media (hover: none) {
+    .scroll_bottom:hover {
+        background: #F2C94C;
+    }
+}

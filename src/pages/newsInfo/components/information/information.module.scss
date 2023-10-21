@@ -1,0 +1,52 @@
+@import "../../../../global";
+
+.information {
+    padding: 5rem 0 4rem;
+    background-color: $light-color;
+    color: $primary-color;
+
+    &_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        row-gap: 2rem;
+        align-items: center;
+
+        .image {
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+
+            .card_title {
+                font-size: 1.5rem;
+                color: $primary-color;
+                font-weight: $bold-fw;
+                margin-bottom: 1rem;
+            }
+
+            .card_text {
+                font-size: 1rem;
+                font-weight: $regular-fw;
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .information {
+
+        &_container {
+            grid-template-columns: repeat(1, 1fr);
+            align-items: unset;
+        }
+    }
+}

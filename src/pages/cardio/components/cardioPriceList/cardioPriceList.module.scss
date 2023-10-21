@@ -1,0 +1,129 @@
+@import "../../../../global";
+
+.cardioPriceList {
+    padding: 5rem 0 4rem;
+    position: relative;
+    background-color: $white-color;
+
+    &_container {
+        position: relative;
+
+        .section_title {
+            color: $primary-color;
+        }
+
+        .priceList_wrapper {
+            margin: 1.5rem 0 3rem;
+            display: flex;
+            align-content: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: 3rem;
+            row-gap: 2.5rem;
+
+            .priceLists {
+                min-width: 400px;
+                width: calc(50% - 1.5rem);
+                max-width: 500px;
+
+                .list_info_wrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-bottom: 3rem;
+                    gap: 0.5rem;
+
+                    .list_info {
+                        font-size: $normal-fz;
+                        font-weight: $medium-fw;
+                        color: $primary-color;
+                        text-transform: capitalize;
+                    }
+                }
+
+                .lists {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .list {
+                        width: 100%;
+                        display: flex;
+                        align-content: center;
+                        justify-content: space-between;
+                        color: $primary-color;
+                        font-size: 1rem;
+                        column-gap: 1.5rem;
+
+                        .list_name {
+                            font-weight: $regular-fw;
+                        }
+                        .list_price {
+                            min-width: 100px;
+                            font-weight: $bold-fw;
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+
+        .link_btn {
+            display: none;
+            &.active {
+                display: inline-block;
+            }
+
+            .icon {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .cardioPriceList {
+    
+        &_container {
+    
+            .priceList_wrapper {
+    
+                .priceLists {
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cardioPriceList {
+    
+        &_container {
+    
+            .priceList_wrapper {
+    
+                .priceLists {
+                    min-width: unset;
+
+                    .list_info_wrapper {
+                        margin-bottom: 1rem;
+                    }
+
+                    .lists {
+
+                        .list {
+                            .list_price {
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

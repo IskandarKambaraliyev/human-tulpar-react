@@ -1,0 +1,23 @@
+@import "../../global";
+
+.recommends {
+    padding: 5rem 0 4rem;
+
+    &_container {
+        position: relative;
+
+        .section_title {
+            color: $primary-color;
+            margin-bottom: 3rem;
+        }
+
+        img {
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        button {
+            display: none !important;
+        }
+    }
+}

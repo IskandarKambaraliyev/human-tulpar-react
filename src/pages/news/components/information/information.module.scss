@@ -1,0 +1,137 @@
+@import "../../../../global";
+
+.information {
+    padding: 0 0 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    background-color: $primary-color;
+    color: $light-color;
+
+    .cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .filter_wrapper {
+            background-color: #2B3946;
+            padding: 1rem 0;
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                column-gap: 2rem;
+                row-gap: .5rem;
+
+                .filter {
+                    text-transform: capitalize;
+                    color: $light-color;
+                    padding: 5px 0;
+                    cursor: pointer;
+                    user-select: none;
+
+                    &.active {
+                        border-bottom: 1px solid $secondary-color;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+
+        &_container {
+            .cards_wrapper {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+
+                .card {
+                    position: relative;
+                    min-height: 300px;
+                    display: flex;
+
+                    * {
+                        transition: .3s;
+                    }
+
+                    &_image {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    &_content {
+                        flex: 1;
+                        position: relative;
+                        width: 100%;
+                        margin-top: auto;
+                        background-color: $light-color;
+                        padding: 1rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        .card_title {
+                            font-size: 1rem;
+                            font-weight: $bold-fw;
+                            color: $primary-color;
+                        }
+
+                        .card_text {
+                            font-size: $normal-fz;
+                            font-weight: $regular-fw;
+                            color: $primary-color;
+
+                            --max-lines: 2;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: var(--max-lines);
+                            overflow: hidden;
+                        }
+
+                        .card_btn {
+                            font-size: $normal-fz;
+                            font-weight: $semi-bold-fw;
+                            color: $primary-color;
+                            padding: 5px 0;
+                        }
+                    }
+
+                    &:hover {
+                        .card_image img {
+                            transform: scale(1.1);
+                        }
+
+                        .card_content {
+                            background-color: $secondary-color;
+                            color: $light-color;
+
+                            .card_title {
+                                color: $light-color;
+                            }
+
+                            .card_text {
+                                color: $light-color;
+                            }
+
+                            .card_btn {
+                                color: $light-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

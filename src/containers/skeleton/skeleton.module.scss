@@ -1,0 +1,145 @@
+@import "../../global";
+
+.card_skeleton {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  position: relative;
+
+  div {
+    position: relative;
+  }
+  .rect {
+    width: 100%;
+    min-height: 200px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 0) 30%,
+        rgba(0, 0, 0, 0.12) 50%,
+        rgba(0, 212, 255, 0) 70%
+      );
+      animation: animation 1s ease infinite;
+    }
+  }
+  .text {
+    height: 1rem;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 1rem;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 0) 30%,
+        rgba(0, 0, 0, 0.12) 50%,
+        rgba(0, 212, 255, 0) 70%
+      );
+      animation: animation 1s ease infinite;
+    }
+
+    &.bottom {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.top {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+    margin: 0 1rem;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 0) 30%,
+        rgba(0, 0, 0, 0.12) 50%,
+        rgba(0, 212, 255, 0) 70%
+      );
+      animation: animation 1s ease infinite;
+    }
+  }
+}
+
+@keyframes animation {
+  0% {
+    transform: translateX(calc(-100% - 100px));
+  }
+  100% {
+    transform: translateX(calc(100% + 100px));
+  }
+}
+
+.content_skeleton {
+  width: 100%;
+
+  .text {
+    width: 100%;
+    height: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 1rem;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 0) 30%,
+        rgba(0, 0, 0, 0.12) 50%,
+        rgba(0, 212, 255, 0) 70%
+      );
+      animation: animation 3s ease infinite;
+    }
+  }
+}

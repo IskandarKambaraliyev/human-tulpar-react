@@ -1,0 +1,59 @@
+@import "../../../../global";
+
+.ourSpecialists {
+    padding: 5rem 0 4rem;
+    color: $primary-color;
+    background-color: $light-color;
+
+    &_container {
+
+        .section_title {
+            color: $primary-color;
+        }
+
+        .specialists_wrapper {
+            width: 100%;
+            margin: 50px 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+
+            .specialist {
+                min-width: 200px;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .specialist_img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: $radius-full;
+                    overflow: hidden;
+                    border: 2px solid $primary-color;
+                    user-select: none;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .specialist_name {
+                    font-size: 1rem;
+                    font-weight: $bold-fw;
+                    color: $primary-color;
+                    text-transform: capitalize;
+                }
+
+                .specialist_info {
+                    font-size: $normal-fz;
+                    font-weight: $regular-fw;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
